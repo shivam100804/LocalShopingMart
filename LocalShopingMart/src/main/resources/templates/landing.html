@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" th:href="@{/css/swiper-bundle.min.css}" />
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" th:href="@{/css/landing.css}" />
+</head>
+<body>
+<header class="header">
+  <a href="#" class="logo"> <i class="fa fa-shopping-basket"></i> locomart </a>
+  <nav class="navbar">
+    <a href="#home">home</a>
+    <a href="#feature">feature</a>
+    <a href="#product">product</a>
+    <a href="#review">review</a>
+  </nav>
+  <div class="icon">
+    <div class="fas fa-bars" id="menu-btn"></div>
+    <div class="fas fa-search" id="search-btn"></div>
+    <div class="fas fa-shopping-cart" id="cart-btn"></div>
+    <div class="fas fa-user" id="login-btn"></div>
+  </div>
+  <!-- Search Form -->
+  <form th:action="@{/search}" method="get" class="search-form">
+    <input type="search" id="search-box" placeholder="Enter pin-code...." name="query" required>
+    <label for="search-box" class="fas fa-search"></label>
+  </form>
+  <!-- Login Form -->
+  <form th:action="@{/landing}" method="post" class="login-form">
+    <h3>login now</h3>
+    <input required type="text" name="username" id="username" placeholder="Enter Email">
+    <input type="password" placeholder="your password" class="box" name="password" required>
+    <p>forget your password <a th:href="@{/forgot-password}">click here</a></p>
+    <p>don't have an account <a th:href="@{/signup}">Create now</a></p>
+    <input type="submit" value="login now" class="btn">
+  </form>
+</header>
+
+<section class="home" id="home">
+  <!-- Home content (if any) -->
+</section>
+
+<section class="feature" id="feature">
+  <h1 class="heading">our <span>feature</span> </h1>
+  <div class="box-container">
+    <div class="box">
+      <img th:src="@{/images/organic-grocery.jpg}" alt="Fresh and Organic">
+      <h3>fresh and organic</h3>
+      <p>High-quality organic groceries at your doorstep.</p>
+      <a href="#" class="btn">read more</a>
+    </div>
+    <div class="box">
+      <img th:src="@{/images/delivery-boy.jpg}" alt="Free Delivery">
+      <h3>free delivery</h3>
+      <p>Enjoy free and fast delivery on all orders.</p>
+      <a href="#" class="btn">read more</a>
+    </div>
+    <div class="box">
+      <img th:src="@{/images/easy-payment.jpg}" alt="Easy Payment">
+      <h3>easy payment</h3>
+      <p>Secure and convenient payment options.</p>
+      <a href="#" class="btn">read more</a>
+    </div>
+  </div>
+</section>
+
+<section class="product" id="product">
+  <h1 class="heading">our <span>products</span></h1>
+  <div class="swiper product-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide box">
+        <img th:src="@{/images/medical.jpg}" alt="Medical">
+        <h3>Medical</h3>
+        <div class="price">Rs. 50 - 100</div>
+      </div>
+      <div class="swiper-slide box">
+        <img th:src="@{/images/vegetables.jpg}" alt="Vegetables and Fruits">
+        <h3>Vegetables and Fruits</h3>
+        <div class="price">Rs. 50 - 100</div>
+      </div>
+      <div class="swiper-slide box">
+        <img th:src="@{/images/grocery.jpg}" alt="Grocery">
+        <h3>Grocery</h3>
+        <div class="price">Rs. 50 - 100</div>
+      </div>
+      <div class="swiper-slide box">
+        <img th:src="@{/images/dairy.jpg}" alt="Dairy">
+        <h3>Dairy</h3>
+        <div class="price">Rs. 50 - 100</div>
+      </div>
+      <div class="swiper-slide box">
+        <img th:src="@{/images/stationery.jpg}" alt="Stationery">
+        <h3>Stationery</h3>
+        <div class="price">Rs. 50 - 100</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="review" id="review">
+  <h1 class="heading">customer's <span>review</span></h1>
+  <div class="swiper review-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide box">
+        <img th:src="@{/images/review1.jpg}" alt="Customer Review 1">
+        <p>Amazing service and quality products!</p>
+        <h3>John Doe</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+      <!-- Additional reviews... -->
+    </div>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="box-container">
+    <div class="box">
+      <h3>locomart <i class="fa fa-shopping-basket"></i></h3>
+      <p>High-quality groceries and more, delivered right to your doorstep.</p>
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+    </div>
+    <div class="box">
+      <h3>contact info</h3>
+      <a href="#" class="links"><i class="fas fa-phone"></i> 9876543210</a>
+      <a href="#" class="links"><i class="fas fa-envelope"></i> example@email.com</a>
+      <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Etah, India</a>
+    </div>
+    <div class="box">
+      <h3>quick links</h3>
+      <a href="#" class="links"><i class="fas fa-arrow-right"></i> home</a>
+      <a href="#" class="links"><i class="fas fa-arrow-right"></i> feature</a>
+      <a href="#" class="links"><i class="fas fa-arrow-right"></i> product</a>
+      <a href="#" class="links"><i class="fas fa-arrow-right"></i> review</a>
+    </div>
+  </div>
+  <div class="credit">Created by <span>Dev Aditya, Dhruv, Shivam</span></div>
+</section>
+
+<!-- Swiper JS -->
+<script th:src="@{/js/swiper-bundle.min.js}"></script>
+<!-- Custom JS -->
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>
